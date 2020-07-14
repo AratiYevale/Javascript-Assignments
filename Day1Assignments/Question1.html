@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day1Assignment</title>
+</head>
+<body>
+    <!---Question 1 :
+     Explore and explain the various methods in console function
+     Explain them
+     Ex. console.log()
+     console.warn().
+     etc...
+     --->
+     <script>
+        // console.log() method:   
+        /* Mainly used to log(print) the output to the console. 
+        We can put any type inside the log(), be it a string, array, object, boolean etc.*/
+        console.log('letsupgrade');
+        console.log(1);
+        console.log(true);
+        console.log([1,2,3,4,5]); //array inside log
+
+        // console.error() method:
+        /*Used to log error message to the console. Useful in testing of code. 
+        By default the error message will be highlighted with red color.*/
+        console.error('This is a simple error');
+
+
+        // console.warn() method:
+        /*Used to log warning message to the console. 
+        By default the warning message will be highlighted with yellow color.*/ 
+        console.warn('This is a warning.');
+
+
+        // console.time() and console.timeEnd() method:
+        /*Whenever we want to know the amount of time spend by a block or a function,
+         we can make use of the time() and timeEnd() methods*/ 
+         /*They take a label which must be same, and the code inside can be anything( function, object, simple console).*/
+        console.time('abc');
+        let fun = function () {
+            console.log('fun is running');
+        }
+        let fun2 = function () {
+            console.log('fun2 is running..');
+        }
+        fun(); // calling fun(); 
+        fun2(); // calling fun2(); 
+        console.timeEnd('abc');
+        /*In the above code sample, we can see that the label is ‘abc’ which is same for both the time() and the timeEnd() method. 
+        If we increase the amount of code inside the block defined by these methods, then the time will increase.
+        It is also worth remembering that the time returned to the console will be in milliseconds and might be different each time we refresh the page.*/
+
+        // console.table() method:
+        /*This method allows us to generate a table inside a console. 
+        The input must be an array or an object which will be shown as a table.*/
+        console.table({ 'a': 1, 'b': 2 });
+
+
+        // console.count() method:
+        /*This method is used to count the number that the function hit by this counting method.*/ 
+        for (let i = 0; i < 5; i++) {
+            console.count(i);
+        }
+
+
+        // console.group() and console.groupEnd() method:
+        /*group() and groupEnd() methods of the console object allows us to group contents in a separate block, 
+        which will be indented. Just like the time() and the timeEnd() they also accepts label, again of same value.*/
+        console.group('simple');
+        console.warn('warning!');
+        console.error('error here');
+        console.log('Hello everyone');
+        console.groupEnd('simple');
+        console.log('new section');
+
+        // console.clear() method:
+        /*Used to clear the console. The console will be cleared, in case of Chrome a simple overlayed text 
+        will be printed like : ‘Console was cleared’ while in firefox no message is returned.*/ 
+        // console.clear();
+
+
+    </script>
+</body>
+</html>

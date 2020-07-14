@@ -1,0 +1,79 @@
+<!----Question 2 :
+Write the difference between var, let and const with code examples.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day2Assignment</title>
+</head>
+<body>
+    <h4>*** DIFFERENCE BETWEEN LET, VAR AND CONST ***</h4>
+    <pre>         
+    var:
+      * function scoped
+      * undefined when accessing a variable before it's declared
+    let:
+      * block scoped
+      * ReferenceError when accessing a variable before it's declared
+    const:
+      * block scoped
+      * ReferenceError when accessing a variable before it's declared 
+      * can't be reassigned
+    </pre> 
+    <h4>Examples:-</h4>
+   <!-- <p>Var:</p>-->
+    <script>  
+      function vardemo(){
+        console.log("Var Output")
+         var a =10;
+         console.log(a);  // output 10
+         if(true){
+            var a=20;
+            console.log(a); // output 20
+        }
+         console.log(a);  // output 20
+      }
+    </script>
+    <!--In the above code, you can find, when the variable is updated inside the if loop, 
+        that the value of variable "a" updated 20 globally, hence outside the if loop the value persists.
+         It is similar to the Global variable present in other languages. -->
+    <button onclick="vardemo()">Click Here For Var Output</button><!--Press F12 for console-->
+   <!-- <p>let:</p>-->
+    <script>
+        function letdemo(){
+        console.log("Let Output")
+        let a =10;
+        console.log(a);  // output 10
+        if(true){
+        let a=20;
+        console.log(a); // output 20
+        }
+        console.log(a);  // output 10
+       }
+    </script>
+    <!--function  letdemo(){
+        let a =10;
+        let a =20; //throws syntax error
+        console.log(a); 
+      }-->
+      <!--Above function throws error Identifier 'a' has already been declared.-->
+    <button onclick="letdemo()">Click Here For let Output</button><!--Press F12 for console-->
+    <!--<p>const:</p>-->
+    <script>
+        function constdemo(){
+            console.log("Const tput")
+            const MY_VARIABLE =10;
+            console.log(MY_VARIABLE);  //output 10
+       }
+    </script>
+    <!--function constdemo(){
+    const MY_VARIABLE =10;
+    console.log(MY_VARIABLE);  //output 10
+    MY_VARIABLE =20;           //throws type error
+    console.log(MY_VARIABLE); 
+    }-->
+    <!--The above function code will throw an error when we try to reassign the existing const variable.-->
+    <button onclick="constdemo()">Click Here For const Output</button><!--Press F12 for console-->
+</body>
+</html>
